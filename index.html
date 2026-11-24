@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Abhishek & Beauty · Engagement Invitation</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07201b;--bg2:#0d332b;--gold:#cfae5f;--gold2:#f1dc9b;--ivory:#f7f0df;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;background:var(--bg)}
+body{background:var(--bg);color:var(--ivory);font-family:"Cormorant Garamond",Georgia,serif;font-size:19px;text-align:center;overflow-x:hidden}
+
+section{min-height:100vh;padding:72px 24px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;position:relative}
+.gold{background:linear-gradient(120deg,#b8923f,var(--gold2) 45%,#b8923f);-webkit-background-clip:text;background-clip:text;color:transparent}
+.script{font-family:"Great Vibes","Cormorant Garamond",cursive;font-size:clamp(56px,17vw,100px);line-height:1.05;padding:4px 10px}
+h2{font-size:30px;letter-spacing:.08em;text-transform:uppercase;font-weight:700}
+.orn{color:var(--gold);letter-spacing:.5em;font-size:16px}
+.line{width:120px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.sm{opacity:.8;font-style:italic}
+.cap{letter-spacing:.3em;text-transform:uppercase;font-size:14px;color:var(--gold)}
+.fade{opacity:0;transform:translateY(28px);transition:1s ease}
+.fade.in{opacity:1;transform:none}
+
+#gate{position:fixed;inset:0;z-index:50;background:radial-gradient(circle at 50% 40%,var(--bg2),var(--bg));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:34px;transition:opacity 1.2s ease,visibility 1.2s}
+#gate.gone{opacity:0;visibility:hidden}
+.env{position:relative;width:min(310px,80vw);height:205px;background:var(--ivory);border-radius:6px;box-shadow:0 0 0 1px var(--gold),0 24px 60px #000a;cursor:pointer;animation:float 3s ease-in-out infinite}
+.env::before{content:"";position:absolute;inset:0;background:linear-gradient(to top right,transparent 49.5%,#e8dcbc 50%) left/50% 100% no-repeat,linear-gradient(to top left,transparent 49.5%,#e8dcbc 50%) right/50% 100% no-repeat;border-radius:6px}
+.flap{position:absolute;top:0;left:0;width:100%;height:108px;background:linear-gradient(#f1e6c8,#e2d3a8);clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .9s ease;z-index:2}
+.seal{position:absolute;left:50%;top:86px;width:54px;height:54px;margin-left:-27px;border-radius:50%;background:radial-gradient(circle at 35% 30%,var(--gold2),#9c7a2c);color:var(--bg);display:grid;place-items:center;font-family:"Cormorant Garamond",serif;font-size:14px;font-weight:700;letter-spacing:.08em;z-index:3;box-shadow:0 3px 8px #0007;transition:opacity .4s}
+.env.open .flap{transform:rotateX(180deg);z-index:0}
+.env.open .seal{opacity:0}
+@keyframes float{50%{transform:translateY(-8px)}}
+.tap{letter-spacing:.25em;font-size:14px;text-transform:uppercase;color:var(--gold);animation:pulse 2s infinite}
+@keyframes pulse{50%{opacity:.35}}
+
+#hero{background:radial-gradient(ellipse at 50% 25%,var(--bg2),var(--bg) 70%)}#hero::before{content:"";position:absolute;inset:16px;border:1px solid #cfae5f66;border-radius:4px;pointer-events:none}#hero::after{content:"";position:absolute;inset:25px;border:1px solid #cfae5f26;border-radius:2px;pointer-events:none}.amp{font-style:italic;font-size:30px;color:var(--gold2);margin:-6px 0}
+.sp{position:absolute;width:3px;height:3px;border-radius:50%;background:var(--gold2);box-shadow:0 0 8px var(--gold2);animation:tw 3s ease-in-out infinite}
+@keyframes tw{50%{opacity:.1;transform:scale(.4)}}
+.hint{position:absolute;bottom:26px;font-size:13px;letter-spacing:.3em;color:var(--gold);animation:pulse 2s infinite}
+
+#reveal{background:var(--bg2)}
+.rig{position:relative;width:min(340px,88vw);height:350px}
+.scroll{position:absolute;left:50%;top:26px;transform:translateX(-50%);width:84%;background:var(--ivory);color:#10372f;border-radius:4px;overflow:hidden;height:34px;transition:height 1.3s cubic-bezier(.2,.8,.2,1);padding:0 16px;box-shadow:0 12px 34px #000a;border-top:8px solid var(--gold);border-bottom:8px solid var(--gold)}
+.scroll.open{height:270px}
+.scroll .inner{padding:22px 0;opacity:0;transition:opacity 1s .6s}
+.scroll.open .inner{opacity:1}
+.big{font-size:88px;line-height:1;font-weight:700}
+.mon{font-size:26px;letter-spacing:.25em;text-transform:uppercase}
+.cord{position:absolute;right:6%;top:0;width:3px;height:70px;background:var(--gold);touch-action:none;cursor:grab;z-index:5}
+.cord::after{content:"";position:absolute;bottom:-18px;left:-10px;width:23px;height:23px;border-radius:50%;background:radial-gradient(circle at 35% 30%,var(--gold2),#9c7a2c);box-shadow:0 3px 6px #0007}
+.cord.done{opacity:0;pointer-events:none;transition:opacity .5s}
+
+.cd{display:flex;gap:10px;margin-top:8px}
+.cd div{width:70px;padding:12px 0;border:1px solid #cfae5f66;border-radius:8px;background:#ffffff08}
+.cd b{display:block;font-size:30px;color:var(--gold2)}
+.cd span{font-size:12px;letter-spacing:.15em;text-transform:uppercase;opacity:.75}
+.card{width:min(400px,100%);border:1px solid var(--gold);border-radius:12px;padding:22px 18px;background:#ffffff08}
+.card b{font-size:24px;color:var(--gold2)}
+.btn{display:inline-block;padding:13px 26px;border-radius:40px;text-decoration:none;font-size:16px;letter-spacing:.12em;text-transform:uppercase;margin:6px}
+.b1{background:linear-gradient(120deg,#b8923f,var(--gold2));color:#10372f;font-weight:700}
+.b2{border:1px solid var(--gold);color:var(--gold2)}
+#fam,#rsvp{background:var(--bg)}
+</style>
+</head>
+<body>
+
+<div id="gate">
+  <div class="cap">The Engagement of</div>
+  <div class="env" id="env"><div class="flap"></div><div class="seal">A · B</div></div>
+  <div class="tap">Tap to open</div>
+</div>
+
+<section id="hero">
+  <div class="cap fade">You are cordially invited to the engagement of</div>
+  <div class="script gold fade">Abhishek</div>
+  <div class="amp fade">and</div>
+  <div class="script gold fade">Beauty</div>
+  <div class="line"></div>
+  <p class="cap fade" style="letter-spacing:.35em;margin-top:6px">30 · 11 · 2026</p>
+  <div class="hint">SCROLL ↓</div>
+</section>
+
+<section id="reveal">
+  <h2 class="gold fade">Save the Date</h2>
+  <p class="sm fade">Pull the golden cord to reveal</p>
+  <div class="rig fade">
+    <div class="scroll" id="scroll"><div class="inner">
+      <div class="mon">November</div>
+      <div class="big">30</div>
+      <div class="mon">2026</div>
+      <p style="font-size:24px;margin-top:6px">Monday · 10:00 AM</p>
+      
+    </div></div>
+    <div class="cord" id="cord"></div>
+  </div>
+</section>
+
+<section id="when">
+  <h2 class="gold fade">Engagement Ceremony</h2>
+  <div class="card fade">
+    <b>Monday, 30 November 2026</b>
+    <p style="margin:4px 0">at 10:00 AM</p>
+    <div class="line" style="margin:10px auto"></div>
+    <p>Sultanpur</p>
+    <a class="btn b2" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Sultanpur+Uttar+Pradesh">View Location</a>
+  </div>
+  <p class="cap fade" style="margin-top:14px">Counting down</p>
+  <div class="cd fade" id="cd"><div><b id="d">0</b><span>Days</span></div><div><b id="h">0</b><span>Hours</span></div><div><b id="m">0</b><span>Mins</span></div><div><b id="s">0</b><span>Secs</span></div></div>
+</section>
+
+<section id="fam">
+  <h2 class="gold fade">With the Blessings of</h2>
+  <div class="card fade"><p class="cap">Groom’s Family</p><div class="line" style="margin:12px auto"></div><p style="font-size:23px">Mr. Sanjay Singh</p><p class="sm" style="margin:2px 0">and</p><p style="font-size:23px">Mrs. Madhuri Singh</p></div>
+  <div class="orn fade">✦</div>
+  <div class="card fade"><p class="cap">Bride’s Family</p><div class="line" style="margin:12px auto"></div><p style="font-size:23px">Mr. Pappu Singh</p><p class="sm" style="margin:2px 0">and</p><p style="font-size:23px">Mrs. Neetu Singh</p></div>
+</section>
+
+<section id="rsvp" style="min-height:70vh">
+  <div class="orn fade">✦ ✦ ✦</div>
+  <h2 class="gold fade">Your Presence is Our Blessing</h2>
+  <p class="sm fade">Kindly let us know you’re coming</p>
+  <div class="fade">
+    <a class="btn b1" target="_blank" rel="noopener" href="https://wa.me/918795322493?text=Hello%2C%20I%20will%20attend%20the%20engagement%20of%20Abhishek%20%26%20Beauty%20on%2030%20November.">WhatsApp RSVP</a>
+    <a class="btn b2" href="tel:+918795322493">Call</a>
+  </div>
+</section>
+
+<script>
+const hero=document.getElementById('hero');
+for(let i=0;i<26;i++){const p=document.createElement('i');p.className='sp';p.style.left=Math.random()*100+'%';p.style.top=Math.random()*100+'%';p.style.animationDelay=(-Math.random()*3)+'s';p.style.animationDuration=(2+Math.random()*3)+'s';hero.appendChild(p)}
+const env=document.getElementById('env'),gate=document.getElementById('gate');
+document.body.style.overflow='hidden';
+gate.addEventListener('click',()=>{env.classList.add('open');setTimeout(()=>{gate.classList.add('gone');document.body.style.overflow=''},1100)});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.25});
+document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+const cord=document.getElementById('cord'),sc=document.getElementById('scroll');
+let y0=null,dy=0;
+function reveal(){sc.classList.add('open');cord.style.height='70px';cord.classList.add('done')}
+cord.addEventListener('pointerdown',e=>{y0=e.clientY;cord.setPointerCapture(e.pointerId)});
+cord.addEventListener('pointermove',e=>{if(y0===null)return;dy=Math.max(0,Math.min(90,e.clientY-y0));cord.style.height=(70+dy)+'px';if(dy>60){y0=null;reveal()}});
+cord.addEventListener('pointerup',()=>{if(y0!==null&&dy<8)reveal();y0=null;cord.style.height='70px'});
+const T=new Date('2026-11-30T10:00:00+05:30').getTime();
+function tick(){let t=Math.max(0,T-Date.now())/1000;const v={d:Math.floor(t/86400),h:Math.floor(t%86400/3600),m:Math.floor(t%3600/60),s:Math.floor(t%60)};for(const k in v)document.getElementById(k).textContent=v[k]}
+tick();setInterval(tick,1000);
+</script>
+</body>
+</html>
